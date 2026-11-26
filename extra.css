@@ -1,0 +1,70 @@
+/* extra.css: complementa tu styles.css (misma paleta: azul #0a1428 y dorado #FFD700/#FFA500) */
+
+/* Fondo del océano (ruta corregida: styles.css y images/ están al mismo nivel) */
+.ocean-background{background-image:url('images/ocean-background.gif')}
+#dashboardEstudiante{padding-top:64px}
+
+/* Barra de navegación fija */
+.nav-fixed{position:fixed;top:0;left:0;right:0;z-index:1000}
+.nav-fixed .user-info-dash{gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.logout-btn:disabled{opacity:.35;cursor:not-allowed}
+#vol{width:80px;accent-color:#FFD700}
+.logout-btn:hover{background:rgba(255,215,0,.35)}
+button:focus-visible,.island:focus-visible,.course-card:focus-visible,.zona:focus-visible,summary:focus-visible{outline:3px solid #FFD700;outline-offset:3px}
+
+/* Portada */
+.banner-tema{font-family:'Gasoek One',cursive;font-size:clamp(1.4rem,4vw,2.6rem);color:#FFD700;letter-spacing:2px;margin:0 0 14px;text-shadow:0 3px 15px rgba(0,0,0,.7)}
+.banner-fallback{font-family:'Gasoek One',cursive;font-size:clamp(2.2rem,7vw,5rem);color:#fff;margin:10px 0 20px;text-shadow:0 5px 20px rgba(0,0,0,.7)}
+.hero-banner{background-color:#12305c}
+.isla-img{object-fit:contain!important;background:rgba(255,255,255,.04)}
+.course-card{cursor:pointer}
+.fb{display:grid;place-items:center;width:100%;min-height:150px;font-size:4rem;border-radius:20px;background:rgba(255,215,0,.18)}
+#foxy-avatar.fb{width:110px!important;min-height:110px;height:110px!important;font-size:3.4rem;border-radius:50%;background:#FFD700}
+
+/* Islas con etiqueta */
+.island{text-align:center}
+.isla-label{display:block;margin-top:6px;font-family:'Gasoek One',cursive;font-size:1rem;color:#fff;text-shadow:0 2px 8px #000}
+.island .fb{min-height:130px}
+
+/* Pantallas de contenido */
+.view{display:none;max-width:1100px;margin:0 auto;padding:90px 20px 190px}
+.view.on{display:block}
+.view h2{font-family:'Gasoek One',cursive;font-size:clamp(1.5rem,4vw,2.3rem);color:#FFD700;margin-bottom:10px;text-shadow:0 3px 10px rgba(0,0,0,.5)}
+.view h3{color:#FFD700;margin:12px 0 6px}
+.view .lead{color:rgba(255,255,255,.85);margin-bottom:16px}
+.view .mapa{display:block;max-width:100%;max-height:300px;margin:0 auto 16px;border-radius:20px}
+.tab-btn{font:inherit;font-weight:600}
+.tab-btn:hover{background:rgba(255,215,0,.3)}
+.perfil-card{margin-bottom:20px}
+.ficha-img{display:block;width:100%;max-height:230px;object-fit:cover;border-radius:18px;margin:10px 0 16px}
+.ficha-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.ficha-grid .hijo-card{margin:0}
+.ficha-grid .ancho{grid-column:1/-1}
+.ficha-grid .hijo-nombre{font-size:1rem;margin-bottom:4px}
+.perfil-card button:not(.chip):not(.tab-btn){background:linear-gradient(135deg,#FFD700,#FFA500);border:none;color:#1a1f3a;font:inherit;font-weight:600;padding:10px 22px;border-radius:25px;cursor:pointer;margin:12px 8px 0 0}
+.vid{width:100%;max-height:430px;background:#000;border-radius:20px}
+.nota{font-size:.85rem;color:rgba(255,255,255,.65);margin:8px 0}
+.nota code{color:#FFD700}
+.trans{margin:10px 0;background:rgba(255,255,255,.05);padding:12px 16px;border-radius:14px}
+.cred li{margin:8px 0 8px 20px}
+
+/* Juegos (arrastrar y soltar) */
+.zonas{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.zona{border:2px dashed rgba(255,215,0,.55);border-radius:16px;min-height:80px;padding:10px;background:rgba(255,255,255,.05);text-align:center;cursor:pointer;color:#fff}
+.zona:hover{background:rgba(255,215,0,.12)}
+.zona.ok{border-style:solid;border-color:#4ade80;background:rgba(74,222,128,.14)}
+.pool{margin-top:16px;padding:12px;background:rgba(0,0,0,.28);border-radius:16px}
+.chip{font:inherit;font-weight:600;border:none;border-radius:999px;padding:9px 16px;margin:4px;background:rgba(255,255,255,.14);color:#fff;cursor:grab}
+.chip:hover{background:rgba(255,215,0,.35)}
+.chip.sel{background:#FFD700;color:#1a1f3a}
+.chip:disabled{background:#2e6b2e;color:#d9ffd9;cursor:default}
+#info{margin-top:14px;font-weight:600;color:#FFD700;min-height:26px}
+
+@media (max-width:768px){
+  .nav-fixed .tx{display:none}
+  .nav-fixed .dashboard-logo span{display:none}
+  .view{padding:80px 14px 150px}
+  .foxy-container{bottom:8px;right:8px}
+  #foxy-avatar.fb{width:64px!important;height:64px!important;min-height:64px;font-size:2rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
