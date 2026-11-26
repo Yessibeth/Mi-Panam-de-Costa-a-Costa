@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Las comarcas de Panamá | Sendero del Saber</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- ==================== MENÚ FIJO (siempre visible) ==================== -->
+<header class="red-nav">
+  <button type="button" class="red-logo" data-go="inicio" aria-label="Ir al inicio">
+    <img src="images/logo.jpg" alt="" onerror="this.hidden=true">
+    <span>Mi Panamá de Costa a Costa</span>
+  </button>
+  <nav class="red-menu" aria-label="Menú principal">
+    <button type="button" data-go="inicio" id="navInicio">Inicio</button>
+    <button type="button" id="btnAtras">◀ Atrás</button>
+    <button type="button" id="btnSiguiente">Siguiente ▶</button>
+    <button type="button" id="btnAyuda" aria-label="Ayuda">❓</button>
+    <button type="button" id="btnMute" aria-label="Silenciar sonido" aria-pressed="false">🔊</button>
+<input type="range" id="volumen" min="0" max="1" step="0.1" value="0.7" aria-label="Volumen">
+    <span class="red-puntos" aria-live="polite">⭐ <strong id="puntos">0</strong></span>
+  </nav>
+</header>
+
+<main id="contenido">
+
+  <!-- ==================== PANTALLA: INICIO (portada + guía inicial) ==================== -->
+  <section class="pantalla" id="pantalla-inicio" aria-label="Inicio">
+    <div id="inicio" class="hero-banner">
+      <canvas id="forestCanvas" class="forest-canvas" aria-hidden="true"></canvas>
+      <div class="banner-content">
+        <p class="banner-subtitle">EXPLORA</p>
+        <img src="images/sendero-del-saber-title.png" alt="Sendero del Saber" class="banner-title-image" onerror="this.hidden=true">
+        <h1 class="red-titulo">Comarcas de Panamá</h1>
+        <p class="red-chips"><span>4.º grado</span><span>Ciencias Sociales</span><span>9 a 10 años</span></p>
+        <p class="banner-tagline">DESCUBRE DÓNDE ESTÁN, CÓMO SON<br>Y QUÉ LAS HACE ESPECIALES.</p>
+        <button type="button" class="btn-empieza-wrap" data-go="mapa" aria-label="Empieza la aventura">
+          <img src="images/btn-empieza.png" alt="" class="btn-empieza-img" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'btn-gold',textContent:'¡EMPIEZA!'}))">
+        </button>
+      </div>
+    </div>
+
+    <footer id="contacto" class="site-footer">
+      <div class="footer-content">
+        <div class="footer-copyright">© 2026 SENDERO DEL SABER - CRECE, APRENDE Y SIGUE AVANZANDO, PERO SIEMPRE A TU RITMO.</div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- ==================== PANTALLA: MAPA DE CONTENIDOS (islas) ==================== -->
+  <section class="pantalla" id="pantalla-mapa" hidden aria-labelledby="tituloMapa">
+    <div class="red-ocean">
+      <h2 id="tituloMapa" class="red-h2">Mapa de contenidos</h2>
+      <p class="red-sub">Toca una isla para empezar</p>
+      <div class="red-islas" id="islas"></div>
+    </div>
+  </section>
+
+  <!-- ==================== PANTALLA: MÓDULO (una sola plantilla para las 6 islas) ==================== -->
+  <section class="pantalla" id="pantalla-modulo" hidden aria-labelledby="moduloTitulo">
+    <div class="red-panel">
+      <p class="red-modulo-emoji" id="moduloEmoji" aria-hidden="true"></p>
+      <h2 id="moduloTitulo" class="red-h2"></h2>
+      <p id="moduloResumen" class="red-sub"></p>
+      <div class="red-card" id="moduloContenido">Estamos preparando esta isla. ¡Muy pronto podrás explorarla!</div>
+      <p class="red-centro"><button type="button" class="btn-gold" data-go="mapa">Volver al mapa</button></p>
+    </div>
+  </section>
+
+  <!-- ==================== PANTALLA: CRÉDITOS Y REFERENCIAS ==================== -->
+  <section class="pantalla" id="pantalla-creditos" hidden aria-labelledby="tituloCreditos">
+    <div class="red-panel">
+      <h2 id="tituloCreditos" class="red-h2">Créditos y referencias</h2>
+      <article class="red-card">
+        <h3>📚 Fuente del contenido</h3>
+        <p>Ministerio de Educación de Panamá (MEDUCA). (2024). <em>Ciencias Sociales 4. Guía del estudiante</em>, Unidad 2 «Nuestras provincias y comarcas», Tema 2 «Ubicación y paisaje geográfico de nuestras comarcas» (págs. 66-79). ISBN 978-9962-19-167-4.</p>
+      </article>
+      <article class="red-card">
+        <h3>🎨 Material externo y licencias</h3>
+        <ul>
+          <li>Tipografías Gasoek One e Inter: Google Fonts, licencia SIL Open Font License 1.1.</li>
+          <li>Íconos de redes: Font Awesome Free 6.4 (íconos CC BY 4.0, fuentes SIL OFL, código MIT).</li>
+          <li>Ilustraciones, logo y Foxy: proyecto Sendero del Saber. <em>(Completar autoría y licencia de cada imagen final.)</em></li>
+        </ul>
+      </article>
+      <p class="red-centro"><button type="button" class="btn-gold" data-go="inicio">🏠 Volver al inicio</button></p>
+    </div>
+  </section>
+</main>
+
+<!-- ==================== DIÁLOGO DE FOXY (guía inicial al tocar EMPIEZA) ==================== -->
+<div id="dialogo" class="dlg" role="dialog" aria-modal="true" aria-label="Mensaje de Foxy" hidden>
+<img id="dlgFoxy" src="images/foxy/foxy-saluda.png" alt="" class="dlg-foxy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'dlg-emoji',textContent:'🦊'}))">
+  <div class="dlg-caja">
+    <span class="dlg-nombre">Foxy</span>
+    <p class="dlg-texto" id="dlgTexto" aria-hidden="true"></p>
+    <p class="sr-only" id="dlgLeer" aria-live="polite"></p>
+    <div class="dlg-extra">
+      <button type="button" id="dlgEscuchar">🔊 Escuchar</button>
+      <button type="button" id="dlgSaltar">Saltar ⏭</button>
+    </div>
+    <button type="button" id="dlgSig" class="dlg-sig" aria-label="Continuar">▼</button>
+  </div>
+</div>
+
+<!-- ==================== AYUDA ==================== -->
+<dialog id="dlgAyuda" aria-labelledby="ayudaTitulo">
+  <h2 id="ayudaTitulo">¿Cómo navego?</h2>
+  <ul>
+    <li><strong>Inicio:</strong> vuelve a la portada.</li>
+    <li><strong>Atrás / Siguiente:</strong> avanza o regresa paso a paso.</li>
+    <li><strong>🔊 y la barra:</strong> silencia o cambia el volumen.</li>
+    <li><strong>Teclado:</strong> usa Tab para moverte y Enter para elegir.</li>
+  </ul>
+  <button type="button" class="btn-gold" id="verGuia">🦊 Ver la guía de Foxy</button>
+  <button type="button" class="btn-gold" id="cerrarAyuda">¡Entendido!</button>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
